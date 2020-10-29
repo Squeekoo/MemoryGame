@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(rgba(241, 132, 120, 0.103), #222222);
+}
+
+.title {
+  font-family: "Syne Mono", monospace;
+  text-align: center;
+  font-size: 5em;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  margin: 50px;
+  justify-content: center;
+}
+
+.game-info-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  perspective: 500px;
+}
+
+.game-info {
+  font-family: "Syne Mono", monospace;
+  font-size: 2.5em;
+}
+
+.card {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  transform-style: preserve-3d;
+  transition: transform 700ms;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card-back {
+  background-color: black;
+  border-radius: 20px;
+  box-shadow: 1px 1px 6px rgba(255, 0, 0, 0.61);
+}
+
+.card-back:hover {
+  box-shadow: 1px 1px 1px rgb(255, 255, 255);
+  transition: 200ms;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.card.visible .card-back {
+  transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+  transform: rotateY(0);
+}
+
+[data-id="red"] {
+  background-color: red;
+  border-radius: 20px;
+  font-family: "Syne Mono", monospace;
+  font-size: 2em;
+}
+[data-id="green"] {
+  background-color: green;
+  border-radius: 20px;
+  font-family: "Syne Mono", monospace;
+  font-size: 2em;
+}
+[data-id="blue"] {
+  background-color: blue;
+  border-radius: 20px;
+  font-family: "Syne Mono", monospace;
+  font-size: 2em;
+}
+[data-id="yellow"] {
+  background-color: yellow;
+  border-radius: 20px;
+  font-family: "Syne Mono", monospace;
+  font-size: 2em;
+}
+[data-id="orange"] {
+  background-color: orange;
+  border-radius: 20px;
+  font-family: "Syne Mono", monospace;
+  font-size: 2em;
+}
